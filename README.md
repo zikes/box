@@ -20,7 +20,7 @@ fmt.Print(b.Sprint("BOX"))
 
 * [type Box](#Box)
 * [type Section](#Section)
-* [type BoxStyle](#BoxStyle)
+* [type BoxStyle](#BoxStyle-2)
 * [type Alignment](#Alignment)
 
 # `Box`
@@ -43,25 +43,11 @@ style of the Sections it contains.
 
 ### BoxStyle
 
-Determines the line style of the box. Available styles:
+Determines the line style of the box. Available styles are `DefaultStyle`,
+`DoubleStyle`, `RoundedStyle`, `ClassicStyle`, and `BlankStyle`.
 
-```
-┌────────────────┐ ╔═══════════════╗
-│  DefaultStyle  │ ║  DoubleStyle  ║
-└────────────────┘ ╚═══════════════╝
-╭────────────────╮ +----------------+
-│  RoundedStyle  │ |  ClassicStyle  |
-╰────────────────╯ +----------------+
-                
-  BlankStyle†   
-                
-```
-
-† `BlankStyle` uses blank spaces, which can be useful for
-boxes comprised of solid background colors.
-
-You can also provide your own BoxStyle if you prefer, so
-long as it is of the `BoxStyle` struct type.
+You can also provide your own `BoxStyle` if you prefer, so
+long as it is of the [`BoxStyle`](#BoxStyle-2) struct type.
 
 ### Margin
 
@@ -172,7 +158,8 @@ type BoxStyle struct {
 ```
 
 Each property of a `BoxStyle` is the character to be inserted in that
-position when drawing the box. For example, this is the `DefaultStyle`:
+position when drawing the box. For example, this is the definition for
+`DefaultStyle`:
 
 ```go
 var DefaultStyle BoxStyle = BoxStyle{
@@ -193,6 +180,23 @@ Note that `MidTop` and `MidBottom` are not currently used by the `Box`
 library, and may safely be omitted from custom `BoxStyle` definitions.
 They are included in all built-in definitions for convenience, in case
 support for vertical splits should be implemented at a later date.
+
+Available styles:
+
+```
+┌────────────────┐ ╔═══════════════╗
+│  DefaultStyle  │ ║  DoubleStyle  ║
+└────────────────┘ ╚═══════════════╝
+╭────────────────╮ +----------------+
+│  RoundedStyle  │ |  ClassicStyle  |
+╰────────────────╯ +----------------+
+                
+  BlankStyle†   
+                
+```
+
+† `BlankStyle` uses blank spaces, which can be useful for
+boxes comprised of solid background colors.
 
 # Alignment
 
