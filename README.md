@@ -106,6 +106,16 @@ type Section struct {
 A `Section` is a horizontal split in the box, which may optionally
 carry its own styles.
 
+```
+┌─────────────┐
+│  Section 1  │
+├─────────────┤
+│  Section 2  │
+├─────────────┤
+│  Section 3  │
+└─────────────┘
+```
+
 ### BoxStyle
 
 Useful for specifying different line styles for different sections
