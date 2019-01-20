@@ -12,7 +12,7 @@ b := &box.Box{
   Padding: 3,
 }
 
-fmt.Print(box.Sprint("BOX"))
+fmt.Print(b.Sprint("BOX"))
 // ╔═════════╗
 // ║   BOX   ║
 // ╚═════════╝
