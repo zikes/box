@@ -154,3 +154,47 @@ omitted, the `BorderColor` of the container `Box` is inherited.
 An optional `*color.Color` from http://github.com/fatih/color, which
 determines the color scheme used to print the `Section`'s contents.
 
+# BoxStyle
+
+```go
+type BoxStyle struct {
+  TopLeft     string
+  TopRight    string
+  BottomRight string
+  BottomLeft  string
+  MidRight    string
+  MidLeft     string
+  MidTop      string
+  MidBottom   string
+  Vertical    string
+  Horizontal  string
+}
+```
+
+Each property of a `BoxStyle` is the character to be inserted in that
+position when drawing the box. For example, this is the `DefaultStyle`:
+
+```go
+var DefaultStyle BoxStyle = BoxStyle{
+  TopLeft:     "┌",
+  TopRight:    "┐",
+  BottomRight: "┘",
+  BottomLeft:  "└",
+  MidRight:    "┤",
+  MidLeft:     "├",
+  MidTop:      "┬",
+  MidBottom:   "┴",
+  Vertical:    "│",
+  Horizontal:  "─",
+}
+```
+
+Note that `MidTop` and `MidBottom` are not currently used by the `Box`
+library, and may safely be omitted from custom `BoxStyle` definitions.
+They are included in all built-in definitions for convenience, in case
+support for vertical splits should be implemented at a later date.
+
+# Alignment
+
+The built-in `Alignment` constants determine how a `Section`'s contents
+are aligned. They are `LeftAlign`, `RightAlign`, and `CenterAlign`.
