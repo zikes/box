@@ -18,6 +18,11 @@ fmt.Print(b.Sprint("BOX"))
 // ╚═════════╝
 ```
 
+* [type Box](#Box)
+* [type Section](#Section)
+* [type BoxStyle](#BoxStyle)
+* [type Alignment](#Alignment)
+
 # `Box`
 
 ```go
